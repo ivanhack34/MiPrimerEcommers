@@ -84,31 +84,32 @@ function addProductToCart(title, price, productImg){
     }
 }
 
-//El contenido del carrito
+// El contenido del carrito
+
 let cartBoxContent = `
-                        <img src="imagenes/Producto2.jpg" alt="" class="cart-img">
-                        <div class="detail-box">
-                            <div class="cart-product-title">TECNO</div>
-                            <div class="cart-price">$40.05</div>
-                            <input type="number" value="1" class="cart-quantity">
-                        </div>
+        <img src="imagenes/Producto2.jpg" alt="" class="cart-img">
+        <div class="detail-box">
+            <div class="cart-product-title">TECNO</div>
+            <div class="cart-price">$40.05</div>
+            <input type="number" value="1" class="cart-quantity">
+        </div>
 
-                        <!--Quitar de la cartera-->
-                        <i class='bx bxs-trash-alt cart-remove' ></i>`;
+        <!--Quitar de la cartera-->
+        <i class='bx bxs-trash-alt cart-remove' ></i>`;
 
-cartShopBox.innerHTML = cartBoxContent;
-cartItems.append(cartShopBox)
-cartShopBox.getElementsByClassName('cart-remove')[0]
-            .addEventListener('click', removeCartItem)
+// let cartShopBox = document.querySelector(".cart-content")
+// cartShopBox.innerHTML = cartBoxContent;
+// cartShopBox.getElementsByClassName('cart-remove')[0]
+//             .addEventListener('click', removeCartItem)
 
-cartShopBox.getElementsByClassName('cart-quantity')[0]
-            .addEventListener("change", quantityChanged)
+// cartShopBox.getElementsByClassName('cart-quantity')[0]
+//             .addEventListener("change", quantityChanged)
 
 
 //Actualizar el total
 function updatetotal(){
-    const cartContent = document.getElementsByClassName("cart-content")[0];
-    const cartBoxes = cartContent.getElementsByClassName("cart-box");
+    let cartContent = document.getElementsByClassName("cart-content")[0];
+    let cartBoxes = cartContent.getElementsByClassName("cart-box");
     let total = 0;
 
     for (let i = 0; i < cartBoxes.length; i++) {
